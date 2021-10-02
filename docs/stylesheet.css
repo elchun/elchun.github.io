@@ -1,0 +1,13 @@
+body {
+    background-color:beige;
+    font-family: serif;
+}
+
+p {
+    width:600px;
+    text-justify: inter-word;
+}
+
+img {
+    width: 600px;
+}
