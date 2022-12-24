@@ -15,7 +15,7 @@ class FishBoard {
 
     private show_fish: boolean = true;
 
-    private readonly body_to_canvas: number = 1.10;
+    private readonly body_to_canvas: number = 1;
     private readonly fish_range_offset: number = 20;
 
     /**
@@ -35,8 +35,13 @@ class FishBoard {
         // document.querySelector('body').clientHeight
 
 
-        this.board.width = document.documentElement.scrollWidth * this.body_to_canvas;
-        this.board.height = document.documentElement.scrollHeight;
+        // this.board.width = this.board.parentElement.scrollWidth* this.body_to_canvas;
+        // this.board.height = this.board.parentElement.scrollHeight;
+        this.board.width = document.documentElement.clientWidth;
+        // this.board.height = document.documentElement.scrollHeight;
+        this.board.height = document.getElementById('content').offsetHeight;
+
+        console.log(this.board.width);
         // this.board.style.left = '50%';
         // this.board.style.top = '0%';
 
@@ -104,9 +109,10 @@ class FishBoard {
 
     public on_resize() {
         console.log('resizing');
-        // Full height, including the scroll part
-        this.board.width = document.documentElement.scrollWidth * this.body_to_canvas;
-        this.board.height = document.documentElement.scrollHeight;
+        // // Full height, including the scroll part
+        this.board.width = document.documentElement.clientWidth;
+        // this.board.width = document.getElementById('body').;
+        this.board.height = document.getElementById('content').offsetHeight;
 
         const fish_x_range = {low: -this.fish_range_offset, high: this.board.width + this.fish_range_offset}
         const fish_y_range = {low: -this.fish_range_offset, high: this.board.height + this.fish_range_offset}
@@ -376,9 +382,8 @@ document.addEventListener("click", function(e) {
         return
     }
 
-    console.log('hi');
-    const xPos = e.clientX;
-    const yPos = e.clientY;
+    const xPos = e.clientX + document.documentElement.scrollLeft;
+    const yPos = e.clientY + document.documentElement.scrollTop;
 
     const coord = {x: xPos, y: yPos};
     board.set_click_location(coord)
@@ -401,6 +406,7 @@ button.addEventListener('click', function(e) {
 window.addEventListener('resize', function(e) {
     board.on_resize();
 }, false)
+
 
 
 main();

@@ -11,14 +11,18 @@ var FishBoard = /** @class */ (function () {
         this.fishArr = [];
         this.click_timer = 0;
         this.show_fish = true;
-        this.body_to_canvas = 1.10;
+        this.body_to_canvas = 1;
         this.fish_range_offset = 20;
         this.board = document.getElementById("board");
         this.board_ctx = this.board.getContext("2d");
         // const dimension = [document.documentElement.scrollHeight, document.documentElement.scrollWidth];
         // document.querySelector('body').clientHeight
-        this.board.width = document.documentElement.scrollWidth * this.body_to_canvas;
-        this.board.height = document.documentElement.scrollHeight;
+        // this.board.width = this.board.parentElement.scrollWidth* this.body_to_canvas;
+        // this.board.height = this.board.parentElement.scrollHeight;
+        this.board.width = document.documentElement.clientWidth;
+        // this.board.height = document.documentElement.scrollHeight;
+        this.board.height = document.getElementById('content').offsetHeight;
+        console.log(this.board.width);
         // this.board.style.left = '50%';
         // this.board.style.top = '0%';
         // Draw rectangel to cover canvas
@@ -73,9 +77,10 @@ var FishBoard = /** @class */ (function () {
     };
     FishBoard.prototype.on_resize = function () {
         console.log('resizing');
-        // Full height, including the scroll part
-        this.board.width = document.documentElement.scrollWidth * this.body_to_canvas;
-        this.board.height = document.documentElement.scrollHeight;
+        // // Full height, including the scroll part
+        this.board.width = document.documentElement.clientWidth;
+        // this.board.width = document.getElementById('body').;
+        this.board.height = document.getElementById('content').offsetHeight;
         var fish_x_range = { low: -this.fish_range_offset, high: this.board.width + this.fish_range_offset };
         var fish_y_range = { low: -this.fish_range_offset, high: this.board.height + this.fish_range_offset };
         for (var _i = 0, _a = this.fishArr; _i < _a.length; _i++) {
@@ -292,9 +297,9 @@ document.addEventListener("click", function (e) {
     if (e.target.id === 'fish_on') {
         return;
     }
-    console.log('hi');
-    var xPos = e.clientX;
-    var yPos = e.clientY;
+    var xPos = e.clientX + document.documentElement.scrollLeft;
+    var yPos = e.clientY + document.documentElement.scrollTop;
+    console.log(yPos);
     var coord = { x: xPos, y: yPos };
     board.set_click_location(coord);
 });

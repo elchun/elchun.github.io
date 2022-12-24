@@ -12,131 +12,133 @@
 <link rel="stylesheet" href="stylesheet.css">
 </head>
 <body>
+
+    <div class="content" id="content">
+
+        <div class="header">
+            <img src="resources/cookie.png" id='profile_pic'/>
+            <!-- <h1>Ethan's Super Fun Project Site<h1> -->
+            <h1 id="name">Ethan Chun's Super Fun Project Site</h1>
+        </div>
+
+        <!-- <hr> -->
+
+        <div>
+            <p>
+                <!-- Hello! This is my super fun project site for lots of random projects.
+                Honestly, I just thought it'd be kinda fun to slap a bunch of stuff
+                together so we'll see how this goes. -->
+                Hello! Welcome to my project page!  I am a junior at MIT studying Comptuer Science
+                and Math.  I currently work with the Hugh Herr's Biomechatronics Group and
+                Leslie Kaelbling and Tomas Lozano-Perez's Learning and Intelligent Systems Group.
+            </p>
+            <p>
+                I am particularly interested in the intersection of Robotics and Machine Learning
+                with a focus on applying machine learning techniques to improve current robotic performance.
+                Some of my recent projects include creating a chess playing robot in Drake simulator
+                using Mask R-CNN and ICP and developing Local Neural Descriptor Fields
+                for locally condition pose extraction.
+                On my free time, I enjoy making random things, dumpster diving, and exploring my school's campus.
+            </p>
+        </div>
+
+        <!-- <hr> -->
+        <h1>Projects</h1>
+        <!-- <hr> -->
+
+        <div class="project_tab">
+            <video src="resources/chessbot_web_clip.mp4" class="project_video" autoplay muted loop></video>
+            <!-- <iframe width="20%" height="auto" src="https://www.youtube.com/embed/B49J5w8MMrM?autoplay=1&mute=1"
+                title="YouTube video player" frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media;
+                gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <img src="project_pages/maker_portfolio_images/Supermax 4.jpg" class="project_picture"/> -->
+            <div>
+                <h2>
+                    <a href="project_pages/maker_portfolio.html">ChessBot</a>
+                </h2>
+                <p>
+                    ChessBot. TODO
+                </p>
+            </div>
+        </div>
+
+        <div class="project_tab">
+            <!-- <img src="resources/cookie.png" class="project_picture"/> -->
+            <img src="project_pages/maker_portfolio_images/Supermax 4.jpg" class="project_picture"/>
+            <div>
+                <h2>
+                    <a href="project_pages/maker_portfolio.html">Maker Portfolio</a>
+                </h2>
+                <p>
+                    This is a collection of images and descriptions from the maker portfolio
+                    that I used to apply to MIT.  I haven't edited it too much but its a good
+                    overview of some of my previous projects
+                </p>
+            </div>
+        </div>
+
+        <!-- <h1>Research</h1>
+
+        <div class="project_tab">
+            <img src="project_pages/maker_portfolio_images/Supermax 4.jpg" class="project_picture"/>
+            <div>
+                <h2>
+                    <a href="project_pages/maker_portfolio.html">ChessBot</a>
+                </h2>
+                <p>
+                    ChessBot. TODO
+                </p>
+            </div>
+        </div> -->
+
+
+
+
+
+        <h2>Useful Links</h2>
+
+        <!-- <a href="project_pages/maker_portfolio.html">Maker Portfolio</a>
+        <ul>
+            <li>
+            <p>
+            This is a collection of images and descriptions from the maker portfolio
+            that I used to apply to MIT.  I haven't edited it too much but its a good
+            overview of some of my previous projects
+            </p>
+            </li>
+        </ul> -->
+
+
+        <a href="project_pages/publications.html">Research</a>
+        <ul>
+            <li>
+            <p>
+            I really enjoy working on reasearch, see more of it here!
+            </p>
+            </li>
+        </ul>
+
+        <a href="resources/Chun_Ethan_Resume_2022_09_22.pdf">Resume</a>
+        <ul>
+            <li>
+            <p>
+            If anyone's curious about my academics or experience...
+            </p>
+            </li>
+        </ul>
+        <!-- <a href="page1.html">This is another page</a> -->
+
+        <!-- <img src="project_pages/maker_portfolio_images/Supermax 1.jpg" alt = "Supermax" style="width:500px;"> -->
+        <!-- <br> -->
+
+    </div>
+
     <canvas id="board" width="100%" height="100%"></canvas>
 
     <button type="button" id="fish_on">
         Turn fish off!
     </button>
-
-    <!-- <div class="content"> -->
-    <div class="header">
-        <img src="resources/cookie.png" id='profile_pic'/>
-        <!-- <h1>Ethan's Super Fun Project Site<h1> -->
-        <h1 id="name">Ethan Chun's Super Fun Project Site</h1>
-    </div>
-
-    <!-- <hr> -->
-
-    <div>
-        <p>
-            <!-- Hello! This is my super fun project site for lots of random projects.
-            Honestly, I just thought it'd be kinda fun to slap a bunch of stuff
-            together so we'll see how this goes. -->
-            Hello! Welcome to my project page!  I am a junior at MIT studying Comptuer Science
-            and Math.  I currently work with the Hugh Herr's Biomechatronics Group and
-            Leslie Kaelbling and Tomas Lozano-Perez's Learning and Intelligent Systems Group.
-        </p>
-        <p>
-            I am particularly interested in the intersection of Robotics and Machine Learning
-            with a focus on applying machine learning techniques to improve current robotic performance.
-            Some of my recent projects include creating a chess playing robot in Drake simulator
-            using Mask R-CNN and ICP and developing Local Neural Descriptor Fields
-            for locally condition pose extraction.
-            On my free time, I enjoy making random things, dumpster diving, and exploring my school's campus.
-        </p>
-    </div>
-
-    <!-- <hr> -->
-    <h1>Projects</h1>
-    <!-- <hr> -->
-
-    <div class="project_tab">
-        <video src="resources/chessbot_web_clip.mp4" class="project_video" autoplay muted loop></video>
-        <!-- <iframe width="20%" height="auto" src="https://www.youtube.com/embed/B49J5w8MMrM?autoplay=1&mute=1"
-            title="YouTube video player" frameborder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media;
-            gyroscope; picture-in-picture" allowfullscreen></iframe>
-        <img src="project_pages/maker_portfolio_images/Supermax 4.jpg" class="project_picture"/> -->
-        <div>
-            <h2>
-                <a href="project_pages/maker_portfolio.html">ChessBot</a>
-            </h2>
-            <p>
-                ChessBot. TODO
-            </p>
-        </div>
-    </div>
-
-    <div class="project_tab">
-        <!-- <img src="resources/cookie.png" class="project_picture"/> -->
-        <img src="project_pages/maker_portfolio_images/Supermax 4.jpg" class="project_picture"/>
-        <div>
-            <h2>
-                <a href="project_pages/maker_portfolio.html">Maker Portfolio</a>
-            </h2>
-            <p>
-                This is a collection of images and descriptions from the maker portfolio
-                that I used to apply to MIT.  I haven't edited it too much but its a good
-                overview of some of my previous projects
-            </p>
-        </div>
-    </div>
-
-    <!-- <h1>Research</h1>
-
-    <div class="project_tab">
-        <img src="project_pages/maker_portfolio_images/Supermax 4.jpg" class="project_picture"/>
-        <div>
-            <h2>
-                <a href="project_pages/maker_portfolio.html">ChessBot</a>
-            </h2>
-            <p>
-                ChessBot. TODO
-            </p>
-        </div>
-    </div> -->
-
-
-
-
-
-    <h2>Useful Links</h2>
-
-    <!-- <a href="project_pages/maker_portfolio.html">Maker Portfolio</a>
-    <ul>
-        <li>
-        <p>
-        This is a collection of images and descriptions from the maker portfolio
-        that I used to apply to MIT.  I haven't edited it too much but its a good
-        overview of some of my previous projects
-        </p>
-        </li>
-    </ul> -->
-
-
-    <a href="project_pages/publications.html">Research</a>
-    <ul>
-        <li>
-        <p>
-        I really enjoy working on reasearch, see more of it here!
-        </p>
-        </li>
-    </ul>
-
-    <a href="resources/Chun_Ethan_Resume_2022_09_22.pdf">Resume</a>
-    <ul>
-        <li>
-        <p>
-        If anyone's curious about my academics or experience...
-        </p>
-        </li>
-    </ul>
-    <!-- <a href="page1.html">This is another page</a> -->
-
-    <!-- <img src="project_pages/maker_portfolio_images/Supermax 1.jpg" alt = "Supermax" style="width:500px;"> -->
-    <!-- <br> -->
-
-    <!-- </div> -->
 
     <style>
 
