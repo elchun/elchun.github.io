@@ -12,13 +12,19 @@
 <link rel="stylesheet" href="stylesheet.css">
 </head>
 <body>
+    <canvas id="board" width="100%" height="100%"></canvas>
+
+    <button type="button" id="fish_on">
+        Turn fish off!
+    </button>
+
     <div class="header">
         <h1>Ethan's Super Fun Project Site<h1>
     </div>
 
     <p>
-        Hello! This is my super fun project site for lots of random projects.  
-        Honestly, I just thought it'd be kinda fun to slap a bunch of stuff 
+        Hello! This is my super fun project site for lots of random projects.
+        Honestly, I just thought it'd be kinda fun to slap a bunch of stuff
         together so we'll see how this goes.
     </p>
 
@@ -58,6 +64,31 @@
     <!-- <img src="project_pages/maker_portfolio_images/Supermax 1.jpg" alt = "Supermax" style="width:500px;"> -->
     <!-- <br> -->
 
+    <style>
+        #board {
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          pointer-events:none;
+
+        }
+        #fish_on {
+            position: absolute;
+            top: 5%;
+            left: 90%;
+            background-color: red;
+        }
+        /* #info { */
+          /* position: absolute;
+          top: 0%;
+          left: 5%;
+          z-index: 1; */
+        /* } */
+      </style>
 
 </body>
+
+<script src="fish.js"></script>
+
 </html>
