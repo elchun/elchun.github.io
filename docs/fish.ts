@@ -15,6 +15,9 @@ class FishBoard {
 
     private show_fish: boolean = true;
 
+    private readonly body_to_canvas: number = 1.10;
+    private readonly fish_range_offset: number = 20;
+
     /**
      * Public constructor,
      *
@@ -27,9 +30,15 @@ class FishBoard {
         this.board = document.getElementById("board") as HTMLCanvasElement;
         this.board_ctx = this.board.getContext("2d");
 
-        const dimension = [document.documentElement.clientWidth, document.documentElement.clientHeight];
-        this.board.width = dimension[0];
-        this.board.height = dimension[1];
+        // const dimension = [document.documentElement.scrollHeight, document.documentElement.scrollWidth];
+
+        // document.querySelector('body').clientHeight
+
+
+        this.board.width = document.documentElement.scrollWidth * this.body_to_canvas;
+        this.board.height = document.documentElement.scrollHeight;
+        // this.board.style.left = '50%';
+        // this.board.style.top = '0%';
 
         // Draw rectangel to cover canvas
         // this.board_ctx.fillStyle = this.board_background;
@@ -38,8 +47,8 @@ class FishBoard {
         this.foodIm = new Image();
         this.foodIm.src = 'icecream.png';
 
-        const fish_x_range = {low: -20, high: this.board.width + 20}
-        const fish_y_range = {low: -20, high: this.board.height + 20}
+        const fish_x_range = {low: -this.fish_range_offset, high: this.board.width + this.fish_range_offset}
+        const fish_y_range = {low: -this.fish_range_offset, high: this.board.height + this.fish_range_offset}
 
         const n_fish = 20;
         for (let i=0; i<n_fish; i++) {
@@ -75,6 +84,11 @@ class FishBoard {
      * Draw all fish in the fish array of the board.
      */
     public draw_all_fish() {
+
+        // const dimension = [document.documentElement.clientWidth, document.documentElement.clientHeight];
+        // this.board.width = dimension[0];
+        // this.board.height = dimension[1];
+
         this.clear_board();
         if (this.show_fish) {
             this.draw_click();
@@ -85,6 +99,19 @@ class FishBoard {
 
                 this.draw_single_fish(fish, fish.location, fish.dx)
             }
+        }
+    }
+
+    public on_resize() {
+        console.log('resizing');
+        // Full height, including the scroll part
+        this.board.width = document.documentElement.scrollWidth * this.body_to_canvas;
+        this.board.height = document.documentElement.scrollHeight;
+
+        const fish_x_range = {low: -this.fish_range_offset, high: this.board.width + this.fish_range_offset}
+        const fish_y_range = {low: -this.fish_range_offset, high: this.board.height + this.fish_range_offset}
+        for (const fish of this.fishArr) {
+            fish.update_bounds(fish_x_range, fish_y_range);
         }
     }
 
@@ -300,6 +327,11 @@ class Fish {
         return was_out;
     }
 
+    public update_bounds(x_bounds: {low: number, high: number}, y_bounds: {low: number, high: number}) {
+        this.x_bounds = x_bounds;
+        this.y_bounds = y_bounds;
+    }
+
     public set_target(target: {x: number, y: number}) {
         this.target = target;
         this.got_target = false;
@@ -339,8 +371,6 @@ function main() {
 }
 
 document.addEventListener("click", function(e) {
-
-
     console.log((e.target as Element).id );
     if ((e.target as Element).id === 'fish_on') {
         return
@@ -360,11 +390,17 @@ button.addEventListener('click', function(e) {
     const on_text = "Turn fish off!";
     if (button.innerHTML === off_text) {
         button.innerHTML = on_text;
+        button.style.backgroundColor = 'red'
     }  else {
         button.innerHTML = off_text;
+        button.style.backgroundColor = 'green'
     }
     board.change_show_fish();
 })
+
+window.addEventListener('resize', function(e) {
+    board.on_resize();
+}, false)
 
 
 main();
