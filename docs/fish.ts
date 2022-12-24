@@ -92,6 +92,9 @@ class FishBoard {
      * Update position of all fish.
      */
     public move_all_fish() {
+        if (!this.show_fish) {
+            return;
+        }
         const click_timout = 400;
 
         // console.log(this.click_location);

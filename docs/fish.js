@@ -67,6 +67,9 @@ var FishBoard = /** @class */ (function () {
      * Update position of all fish.
      */
     FishBoard.prototype.move_all_fish = function () {
+        if (!this.show_fish) {
+            return;
+        }
         var click_timout = 400;
         // console.log(this.click_location);
         if (this.click_location) {
@@ -264,7 +267,6 @@ document.addEventListener("click", function (e) {
     console.log(e.target.id);
     if (e.target.id === 'fish_on') {
         return;
-        // your code
     }
     console.log('hi');
     var xPos = e.clientX;
