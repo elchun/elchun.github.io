@@ -59,7 +59,11 @@ img {
     padding: 1%;
 }
 .project_picture {
-    width: 20%;
+    width: 30%;
+    height: auto;
+}
+.project_video {
+    width: 30%;
     height: auto;
 }
 h1 {
