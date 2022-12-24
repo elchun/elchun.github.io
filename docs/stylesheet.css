@@ -1,6 +1,11 @@
 body {
-    /* background-color:beige; */
-    background-image: url("resources/loaf.png");
+    background-color:beige;
+    /* background-image: url("resources/loaf.png"); */
+    /* background-image: url("resources/bridge_background.jpeg"); */
+    /* background-image: url("resources/blur_background.jpeg"); */
+    /* background-size: 110% auto; */
+    background-attachment: fixed;
+
     background-size: 200px auto;
     /* background-color:black; */
     font-family: serif;
@@ -40,7 +45,7 @@ img {
     /* z-index:-1; */
 }
 #profile_pic {
-    width: 30%;
+    width: 20%;
     height: auto;
 }
 .header {
@@ -80,9 +85,10 @@ h1 {
 .content {
     width: min(90%, 1000px);
     position: absolute;
-    top: 5%;
-    left: 10%;
+    top: 4%;
+    left: 4%;
     background-color:beige;
+    /* background-color: lightgrey; */
     /* background-color:red; */
     /* box-sizing: border-box; */
     padding: 1%;
