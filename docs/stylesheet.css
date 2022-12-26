@@ -1,11 +1,17 @@
 body {
-    background-color:beige;
+    /* background-color:rgb(252, 184, 124); */
+    /* background-color:rgb(255, 237, 123); */
+    /* background-color:rgb(161, 223, 187); */
+    /* background-color:rgb(161, 223, 187); */
+    background-color: rgb(193 235 166);
+    /* background-color:rgb(85, 195, 217); */
+    /* background-color: beige; */
     /* background-color: blue; */
     /* background-image: url("resources/loaf.png"); */
     /* background-image: url("resources/eye.jpg"); */
     /* background-image: url("resources/ethan_profile_1.jpg"); */
     /* background-image: url("resources/bridge_background.jpeg"); */
-    background-image: url("resources/blur_background.jpeg");
+    /* background-image: url("resources/blur_background.jpeg"); */
     /* background-size: 110% auto; */
     background-attachment: fixed;
 
