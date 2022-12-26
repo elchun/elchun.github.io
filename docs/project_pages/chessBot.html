@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>chessBot</title>
+  <link rel="stylesheet" href="/stylesheet.css">
+</head scroll=no>
+
+<body>
+
+  <div class="content" id="content">
+    <div class="header">
+      <img src="/resources/chessbot_web_clip.gif" class="project_picture">
+      <h1 class="project_page_title">
+        ChessBot
+      </h1>
+      <a href="/index.html">Home</a>
+    </div>
+      <p>
+        Behold, a robot playing chess!  This is my final project for MIT's
+        <a href="https://manipulation.csail.mit.edu/" target="_blank">course</a> on robotic manipulation (taught by Russ Tedrake).
+        While chess playing robots have been built before, almost all rely on
+        custom chess boards, overhead camera systems, or many, many, cameras.  My idea
+        was to use a single, side-mounted, camera which would be inexpensive
+        and easy to install.  I then used Mask R-CNN and ICP to extract the
+        complete board, Stockfish as the chess engine, and Differential Inverse
+        Kinematics to plan the moves.
+        I also used <a href="https://drake.mit.edu/" target="_blank">Drake</a> simulator
+        to simulate a Panda arm and the board.
+      </p>
+
+      <p>
+        Please see the <a href="https://github.com/elchun/ChessBot" target="_blank">Github</a> for
+        code and additional information.
+      </p>
+
+
+
+    <h1>Video</h1>
+    <!-- <iframe width="90%" height="400px" src="https://www.youtube.com/embed/B49J5w8MMrM?autoplay=1&mute=1" -->
+    <iframe width="90%" height="400px" src="https://www.youtube.com/embed/B49J5w8MMrM?mute=1"
+      title="YouTube video player" frameborder="0"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media;
+      gyroscope; picture-in-picture" allowfullscree align=center class="center"></iframe>
+
+    <!-- <script>
+      function resizeYoutube(event) {
+        const chessbot_vid = document.getElementById('chessBot_vid');
+        const aspect_ratio = 3/4;
+        chessbot_vid.style.width = chessbot_vid.clientWidth;
+        console.log(chessbot_vid.style);
+        chessbot_vid.style.height = chessbot_vid.style.width * aspect_ratio;
+      };
+    </script> -->
+
+    <h1>Paper</h1>
+    <div>
+      <iframe src="/resources/6_4210_Chess_Robot.pdf" class="pdf"></iframe>
+
+    </div>
+  </div>
+
+
+</body>
+</html>
