@@ -4,6 +4,7 @@ body {
     /* background-color:rgb(161, 223, 187); */
     /* background-color:rgb(161, 223, 187); */
     background-color: rgb(193 235 166);
+    /* background-color: #6667AB; */
     /* background-color:rgb(85, 195, 217); */
     /* background-color: beige; */
     /* background-color: blue; */
@@ -109,8 +110,7 @@ h1 {
 }
 
 .project_page_title {
-    font-size: 300%
-
+    font-size: 200%;
 }
 
 .pdf {
