@@ -64,8 +64,8 @@ var FishBoard = /** @class */ (function () {
         // const dimension = [document.documentElement.clientWidth, document.documentElement.clientHeight];
         // this.board.width = dimension[0];
         // this.board.height = dimension[1];
-        this.clear_board();
         if (this.show_fish) {
+            this.clear_board();
             this.draw_click();
             for (var _i = 0, _a = this.fishArr; _i < _a.length; _i++) {
                 var fish = _a[_i];
@@ -141,21 +141,30 @@ var FishBoard = /** @class */ (function () {
             // this.board_ctx.fillText("🍦", this.click_location.x, this.click_location.y)
         }
     };
-    FishBoard.prototype.move_to_click = function (event) {
-        var xPos = event.clientX;
-        var yPos = event.clientY;
-        var click_coord = { x: xPos, y: yPos };
-        this.click_location = click_coord;
-        console.log(this.click_location);
-        // console.log(click_coord);
-        // console.log(this.fishArr);
-        // // console.log(this.fishArr.length);
-        // for (const fish of this.fishArr) {
-        //     console.log(fish);
-        //     // fish.go_to_coord(click_coord);
-        // }
-        // console.log(xPos, yPos);
-    };
+    // /**
+    //  * Set current click coordinate so fish can move there.
+    //  *
+    //  * @param event Click event
+    //  */
+    // public move_to_click(event) {
+    //     const xPos= event.clientX;
+    //     const yPos= event.clientY;
+    //     const click_coord = {x: xPos, y: yPos};
+    //     this.click_location = click_coord;
+    //     console.log(this.click_location);
+    //     // console.log(click_coord);
+    //     // console.log(this.fishArr);
+    //     // // console.log(this.fishArr.length);
+    //     // for (const fish of this.fishArr) {
+    //     //     console.log(fish);
+    //     //     // fish.go_to_coord(click_coord);
+    //     // }
+    //     // console.log(xPos, yPos);
+    // }
+    /**
+     * Tell all fish to go toward mouse click.
+     * @param click_location Location of mouse click
+     */
     FishBoard.prototype.set_click_location = function (click_location) {
         if (this.show_fish) {
             this.click_location = click_location;
@@ -167,7 +176,14 @@ var FishBoard = /** @class */ (function () {
             }
         }
     };
+    /**
+     * Set fish visibility to opposite of current fish visibility.
+     * If changing to hidden, also clear board.
+     */
     FishBoard.prototype.change_show_fish = function () {
+        if (this.show_fish) {
+            this.clear_board();
+        }
         this.show_fish = !this.show_fish;
     };
     return FishBoard;
@@ -193,7 +209,7 @@ var Fish = /** @class */ (function () {
     };
     Fish.prototype.chooseDir = function (dir_change_thresh) {
         var current_direction = this.dx > 0 ? 1 : -1;
-        this.dx = randfloat(0, 2) * current_direction;
+        this.dx = randfloat(0, 3) * current_direction;
         if (Math.random() < dir_change_thresh) {
             this.dx *= -1;
         }
@@ -290,7 +306,7 @@ function main() {
         board.draw_all_fish();
         // board.draw_all_fish();
         main();
-    }, 10);
+    }, 40);
 }
 document.addEventListener("click", function (e) {
     console.log(e.target.id);
@@ -299,7 +315,6 @@ document.addEventListener("click", function (e) {
     }
     var xPos = e.clientX + document.documentElement.scrollLeft;
     var yPos = e.clientY + document.documentElement.scrollTop;
-    console.log(yPos);
     var coord = { x: xPos, y: yPos };
     board.set_click_location(coord);
 });

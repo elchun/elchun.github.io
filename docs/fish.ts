@@ -90,12 +90,13 @@ class FishBoard {
      */
     public draw_all_fish() {
 
+
         // const dimension = [document.documentElement.clientWidth, document.documentElement.clientHeight];
         // this.board.width = dimension[0];
         // this.board.height = dimension[1];
 
-        this.clear_board();
         if (this.show_fish) {
+            this.clear_board();
             this.draw_click();
 
             for (const fish of this.fishArr) {
@@ -182,22 +183,31 @@ class FishBoard {
         }
     }
 
-    public move_to_click(event) {
-        const xPos= event.clientX;
-        const yPos= event.clientY;
-        const click_coord = {x: xPos, y: yPos};
-        this.click_location = click_coord;
-        console.log(this.click_location);
-        // console.log(click_coord);
-        // console.log(this.fishArr);
-        // // console.log(this.fishArr.length);
-        // for (const fish of this.fishArr) {
-        //     console.log(fish);
-        //     // fish.go_to_coord(click_coord);
-        // }
-        // console.log(xPos, yPos);
-    }
+    // /**
+    //  * Set current click coordinate so fish can move there.
+    //  *
+    //  * @param event Click event
+    //  */
+    // public move_to_click(event) {
+    //     const xPos= event.clientX;
+    //     const yPos= event.clientY;
+    //     const click_coord = {x: xPos, y: yPos};
+    //     this.click_location = click_coord;
+    //     console.log(this.click_location);
+    //     // console.log(click_coord);
+    //     // console.log(this.fishArr);
+    //     // // console.log(this.fishArr.length);
+    //     // for (const fish of this.fishArr) {
+    //     //     console.log(fish);
+    //     //     // fish.go_to_coord(click_coord);
+    //     // }
+    //     // console.log(xPos, yPos);
+    // }
 
+    /**
+     * Tell all fish to go toward mouse click.
+     * @param click_location Location of mouse click
+     */
     public set_click_location(click_location: {x: number, y: number}) {
         if (this.show_fish) {
             this.click_location = click_location;
@@ -209,7 +219,14 @@ class FishBoard {
         }
     }
 
+    /**
+     * Set fish visibility to opposite of current fish visibility.
+     * If changing to hidden, also clear board.
+     */
     public change_show_fish() {
+        if (this.show_fish) {
+            this.clear_board();
+        }
         this.show_fish = !this.show_fish;
     }
 }
@@ -256,7 +273,7 @@ class Fish {
 
     private chooseDir(dir_change_thresh) {
         const current_direction = this.dx > 0 ? 1 : -1;
-        this.dx = randfloat(0, 2) * current_direction;
+        this.dx = randfloat(0, 3) * current_direction;
         if (Math.random() < dir_change_thresh) {
             this.dx *= -1;
         }
@@ -373,7 +390,7 @@ function main() {
         board.draw_all_fish();
         // board.draw_all_fish();
         main();
-    }, 10)
+    }, 40)
 }
 
 document.addEventListener("click", function(e) {
@@ -410,3 +427,7 @@ window.addEventListener('resize', function(e) {
 
 
 main();
+
+/**
+ * TODO: Only update fish in viewers field of view.
+ */
