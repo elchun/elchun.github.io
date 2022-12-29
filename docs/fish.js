@@ -37,6 +37,7 @@ var FishBoard = /** @class */ (function () {
             this.fishArr.push(new Fish(fish_x_range, fish_y_range));
         }
         this.draw_all_fish();
+        window.sessionStorage.setItem('fish', 'on');
     }
     /**
      * Deprecated testing code.
@@ -325,10 +326,12 @@ button.addEventListener('click', function (e) {
     if (button.innerHTML === off_text) {
         button.innerHTML = on_text;
         button.style.backgroundColor = 'red';
+        window.sessionStorage.setItem('fish', 'on');
     }
     else {
         button.innerHTML = off_text;
         button.style.backgroundColor = 'green';
+        window.sessionStorage.setItem('fish', 'off');
     }
     board.change_show_fish();
 });
@@ -336,4 +339,7 @@ window.addEventListener('resize', function (e) {
     board.on_resize();
 }, false);
 main();
+/**
+ * TODO: Only update fish in viewers field of view.
+ */ 
 //# sourceMappingURL=fish.js.map

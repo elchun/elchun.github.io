@@ -61,6 +61,7 @@ class FishBoard {
         }
 
         this.draw_all_fish();
+        window.sessionStorage.setItem('fish', 'on');
     }
 
     /**
@@ -226,6 +227,7 @@ class FishBoard {
     public change_show_fish() {
         if (this.show_fish) {
             this.clear_board();
+
         }
         this.show_fish = !this.show_fish;
     }
@@ -412,10 +414,12 @@ button.addEventListener('click', function(e) {
     const on_text = "Turn fish off!";
     if (button.innerHTML === off_text) {
         button.innerHTML = on_text;
-        button.style.backgroundColor = 'red'
+        button.style.backgroundColor = 'red';
+        window.sessionStorage.setItem('fish', 'on');
     }  else {
         button.innerHTML = off_text;
         button.style.backgroundColor = 'green'
+        window.sessionStorage.setItem('fish', 'off');
     }
     board.change_show_fish();
 })
@@ -423,7 +427,6 @@ button.addEventListener('click', function(e) {
 window.addEventListener('resize', function(e) {
     board.on_resize();
 }, false)
-
 
 
 main();
