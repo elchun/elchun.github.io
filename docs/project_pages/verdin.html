@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>verdin</title>
+  <link rel="stylesheet" href="/stylesheet.css">
+  <link rel="shortcut icon" type="image/x-icon" href="/resources/favicon.ico">
+  <link rel="stylesheet" href="/professional.css" id="aux_style">
+  <script>
+      if (window.sessionStorage.getItem('style_mode') == 'fun') {
+          document.getElementById('aux_style').setAttribute('href', '');
+      }
+  </script>
+</head scroll=no>
+
+<body>
+
+  <div class="content" id="content">
+    <div class="header">
+      <img src="/resources/verdin_demo.gif" class="project_picture">
+      <h1 class="project_page_title">
+        A Single-board Mechatronics Platform for Control of a Powered Prosthesis
+      </h1>
+      <a href="/index.html">Home</a>
+    </div>
+      <p>
+        Introducing the Biomechatronics lab's newest powered prosthesis controller!  Developed
+        by Dan Levine, Tony Shu, and myself, this is a single board computer system optimized for driving
+        powered prosthetic limbs.  It features GPIO, ADCs for analog input, SPI, I2C, and high-speed
+        CAN ports.  During my early time at Biomechatronics, I developed
+        firmware for this system (in C++), including communication (spi, I2C) drivers and the data logger.
+        I modified the linux device tree to appropriately define
+        our system configuration. Finally, I worked extensively with integrating the system with the
+        <a href="https://engrxiv.org/preprint/view/577/">TF8 powered prosthetic ankle</a>.  This
+        included designing new hardstops, electronics mounts, wiring harnesses, and
+        heatsinks. The gif above shows a basic impedance controller running on the new verdin system.
+      </p>
+
+      <p>
+        Please see the attached presentation for more details about my work on the controller.
+      </p>
+
+
+
+    <h1>Presentation</h1>
+    <iframe
+      src="https://docs.google.com/presentation/d/e/2PACX-1vQKjc0aBOHk6AAzVjCgy31juAt0QRz5NjLTtz1IgIQvgKFlxf4hsMbHEGRhfklUIOpKKSBMNSZFds-_/embed?start=false&loop=true&delayms=3000"
+      frameborder="0" width="960" height="569" allowfullscreen="true" mozallowfullscreen="true"
+      webkitallowfullscreen="true"></iframe>
+  </div>
+
+
+</body>
+</html>

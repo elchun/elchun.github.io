@@ -1,3 +1,7 @@
+:root {
+  --p_color: rgb(94, 94, 94);
+}
+
 body {
     background-color: white;
     /* background-color: #6667AB; */
@@ -14,9 +18,31 @@ body {
     /* background-size: 200px auto; */
     /* background-color:black; */
     /* font-family: serif; */
-    font-family: Helvetica;
+    /* font-family: Helvetica; */
+    font-family: 'Helvetica Light', 'Helvetica', Arial, sans-serif;
+    /* font-weight: lighter; */
+}
+
+p {
+    color: var(--p_color)
 }
 
 .content {
     background-color: white;
+}
+
+h1 {
+    font-size: 26px;
+}
+
+h2 {
+    font-size: 20px;
+}
+
+
+button{
+    border: none;
+    width: 8%;
+    /* border-radius: 20%; */
+    padding: 5px 5px
 }

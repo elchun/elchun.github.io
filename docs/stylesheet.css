@@ -1,3 +1,8 @@
+:root {
+  --p_color: black;
+}
+
+
 body {
     /* background-color:rgb(252, 184, 124); */
     /* background-color:rgb(255, 237, 123); */
@@ -33,6 +38,7 @@ p {
     /* width:90%; */
     text-justify: inter-word;
     text-align: justify;
+    color: var(--p_color)
 }
 
 img {
@@ -50,19 +56,22 @@ img {
 #fish_on {
     position: absolute;
     top: 5px;
-    left: 80%;
     background-color: red;
     color: black;
     /* z-index:-1; */
 }
 
+
 #style_button{
     position: absolute;
     top: 35px;
-    left: 80%;
     background-color: grey;
     color: black;
     /* z-index:-1; */
+}
+
+#fish_on, #style_button{
+    right: calc(50% - min(45%, 450px));
 }
 #profile_pic {
     width: 20%;
@@ -133,4 +142,17 @@ h1 {
 .center{
     display: block;
     margin: 0 auto;
+}
+
+a, a:visited{
+    text-decoration: none;
+    /* font-weight: bold; */
+    color: var(--p_color);
+    color: black;
+    /* color: blue; */
+    /* color: rgb(94, 94, 94); */
+}
+
+a:hover{
+    text-decoration: underline;
 }
