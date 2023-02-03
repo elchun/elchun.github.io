@@ -1,0 +1,167 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="shortcut icon" href="./assets/favicon.ico">
+  <meta name="description" content="Local Neural Descriptor Fields: Locally Conditioned Object Representations for Manipulation">
+  <meta name="keywords" content="Robotics,Neural,Fields,Manipulation,Local">
+  <title>Local Neural Descriptor Fields: Locally Conditioned Object Representations for Manipulation</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <style>
+    /* Remove the navbar's default margin-bottom and rounded borders */
+    .navbar {
+      margin-bottom: 0;
+      border-radius: 0;
+    }
+
+    /* Add a gray background color and some padding to the footer */
+    footer {
+      background-color: #f2f2f2;
+      padding: 25px;
+    }
+  </style>
+  <link rel="stylesheet" href="./assets/font.css">
+  <!-- <link rel="stylesheet" href="./assets/main.css"> -->
+</head>
+<body>
+
+<div class="jumbotron">
+  <div class="container text-center">
+    <h2 style="color:black;margin-bottom:0;">Local Neural Descriptor Fields: <br>
+      Locally Conditioned Object Representations for Manipulation</h2>
+    <br>
+    <p>
+      <a href="https://elchun.github.io/">Ethan Chun</a>,
+      <a href="https://yilundu.github.io/">Yilun Du</a>,
+      <a href="https://anthonysimeonov.github.io/">Anthony Simeonov</a>,
+      <a href="http://people.csail.mit.edu/tlp/">Tom&aacute;s Lozano Per&eacute;z</a>,
+      <a href="http://people.csail.mit.edu/lpk/">Leslie Pack Kaelbling</a>
+  </div>
+
+  <div class="text-center">
+    <div class="btn-group btn-group-lg" role="group" aria-label="Top menu">
+      <a class="btn btn-primary" href="TODO">Paper</a>
+      <a class="btn btn-primary" href="https://github.com/elchun/lndf_robot">Code</a>
+      <!-- <a class="btn btn-primary" href="https://colab.research.google.com/drive/16bFIFq_E8mnAVwZ_V2qQiKp4x4D0n1sG?usp=sharing">Colab</a> -->
+    </div>
+  </div>
+    <!-- <div class="row">
+      <div class="col-sm-2 col-sm-offset-4">
+        <a href="TODO"><img height="100" width="78" src="./assets/lndf_cover.png" data-nothumb="" style="border: 1px solid;border-color: black;"><br>ICRA 2023<br>Paper<br></a>
+      </div>
+      <div class="col-sm-2">
+        <a href="https://github.com/elchun/lndf_robot"><img height="78" width="120" src="./assets/lndf_code.png" data-nothumb="" style="border: 1px solid"><br>Source Code<br>GitHub<br></a>
+      </div>
+    </div> -->
+</div>
+
+<div class="container bg-3">
+  <div class="row">
+    <!-- <hr> -->
+    <div class="col-sm-12 text-center" style="margin-top: 1em;">
+      <div class="embed-responsive embed-responsive-16by9">
+        <img class="embed-responsive-item" src="./assets/icra_2023.gif">
+        <!-- <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/1TyHCeUc6C0" allowfullscreen></iframe> -->
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container bg-3">
+  <div class="row">
+    <h2 class="text-center"></h2>
+  </div>
+  <p>
+    A robot operating in a household environment will
+    see a wide range of different objects. In this paper, we present a
+    method to generalize object manipulation skills, acquired from
+    a limited number of demonstrations, to novel objects of new
+    categories of shapes. Our approach, Local Neural Descriptor
+    Fields (L-NDF), utilizes neural descriptors defined on the local
+    geometry of the object to effectively transfer manipulation
+    demonstrations to novel objects at test time, leveraging the
+    shared local geometry of novel objects. We illustrate the efficacy
+    of our approach in manipulating novel objects in novel poses
+    in both simulation as well as in the real world.
+  </p>
+  <br>
+</div>
+
+<div class="container bg-3" id="Results">
+  <h2 class="text-center">Results</h2>
+    <hr>
+    <div class="row vspace-top">
+      <div class="col justify-content-center text-center">
+        <video width="100%" playsinline="" autoplay="" loop="" preload="" muted="">
+            <source src="assets/lndf_vid.mp4" type="video/mp4">
+        </video>
+      </div>
+    </div>
+  </div>
+
+
+<div class="container bg-3" id="Related">
+  <h2 class="text-center">Related Projects</h2>
+  <hr>
+
+  <div class="row vspace-top">
+    <div class="col-sm-3">
+        <img src="assets/mug_cut.gif" class="img-fluid" alt="comet" style="width:100%">
+    </div>
+
+    <div class="col-sm-9">
+      <div class="paper-title">
+          <a href="https://yilundu.github.io/ndf/">Neural Descriptor Fields</a>
+      </div>
+      <p>
+        Neural Descriptor Fields (NDFs) condition on object 3D point clouds, and map continuous 3D coordinates to spatial descriptors.
+        NDFs have the key properties of encoding category-level correspondence across shapes and being equivariant to rigid 3D transformations.
+        They can represent both points and oriented local coordinate frames in the vicinity of the point cloud, and allow recovering corresponding points/frames across shapes via
+        nearest-neighbor search in descriptor space (performed via continuous energy optimization).
+        We show NDFs facilitate effecient few-shot learning from demonstration for pick-and-place manipulation tasks.
+      </p>
+    </div>
+  </div>
+
+  <div class="row vspace-top">
+    <div class="col-sm-3">
+        TODO: Get image
+        <!-- <img src="assets/mug_cut.gif" class="img-fluid" alt="comet" style="width:100%"> -->
+    </div>
+    <div class="col-sm-9">
+      <div class="paper-title">
+          <a href="https://anthonysimeonov.github.io/r-ndf/">Relational Neural Descriptor Fields</a>
+      </div>
+      <p>
+        Insert description
+      </p>
+    </div>
+  </div>
+</div>
+
+<div class="container bg-3 text-center" id="Thanks">
+  <br>
+  <br>
+  <br>
+  <h2>
+    Thanks for Reading!!!
+  </h2>
+  <br>
+  <br>
+</div>
+
+
+<!-- <div class="container bg-3">
+  <div class="row">
+    <h2 class="text-center">Acknowledgement</h2>
+    <hr>
+    <p>This work is supported by the NSF Institute for AI and Fundamental Interactions, DARPA Machine Common Sense, NSF grant 2214177, AFOSR grant FA9550-22-1-0249, ONR grant N00014-22-1-2740, MIT-IBM Watson Lab,  MIT Quest for Intelligence and Sony. Anthony Simeonov and Yilun Du are supported in part by NSF Graduate Research Fellowships. We thank the members of the Improbable AI Lab and the Learning and Intelligent Systems Lab for the helpful discussions and feedback on the paper. This webpage template was recycled from <a href="https://yenchenlin.me/nerf-supervision/">here</a>. </p>
+  </div>
+</div><br><br> -->
+
+</body>
+</html>
