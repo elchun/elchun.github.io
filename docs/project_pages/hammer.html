@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>hammer</title>
+  <link rel="stylesheet" href="/stylesheet.css">
+  <link rel="shortcut icon" type="image/x-icon" href="/resources/favicon.ico">
+  <link rel="stylesheet" href="/professional.css" id="aux_style">
+  <script>
+      if (window.sessionStorage.getItem('style_mode') == 'fun') {
+          document.getElementById('aux_style').setAttribute('href', '');
+      }
+  </script>
+</head scroll=no>
+
+<body>
+
+  <div class="content" id="content">
+    <div class="header">
+      <img src="/resources/bird.gif" class="project_picture">
+      <h1 class="project_page_title">
+        Bird Lamp
+      </h1>
+      <a href="/index.html">Home</a>
+    </div>
+      <p>
+        There are a lot of little birds around MIT.  My friend really likes these birds.
+        What better way to celebrate her birthday than a programable glowing bird!
+      </p>
+
+      <p>
+        The body was modeled in <a href="https://www.autodesk.com/products/fusion-360/overview?term=1-YEAR&tab=subscription">Fusion 360</a>
+        and 3D printed on a resin printer.
+         The electronics are a <a href="https://www.seeedstudio.com/Seeeduino-XIAO-Arduino-Microcontroller-SAMD21-Cortex-M0+-p-4426.html">Seeeduino Xiao</a>
+         and <a href="https://www.adafruit.com/product/1463">Adafruit neopixel ring</a>.
+
+        The main design goal was produce a simple and elegant design that was easily
+        3d-printable.  To this end, I designed the bird in three pieces: The external
+        shell, the electronics holder, and a small, internal cap for the power
+        capacitor.  The electronics and shell components are designed to snap
+        together with small groves printed into the parts.  The capacitor cover is
+        intended to be glued in place.
+      </p>
+
+      <h1>
+        Cool pics of the build process!
+      </h1>
+
+      <img src="/resources/inside_bird.JPG" class="showcase_pic">
+      <img src="/resources/inside_bird_2.JPG" class="showcase_pic">
+      <img src="/resources/bottom.JPG" class="showcase_pic">
+      <img src="/resources/bird_full.JPG" class="showcase_pic">
+  </div>
+
+
+</body>
+</html>

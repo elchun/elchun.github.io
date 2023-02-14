@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cat Ears</title>
+  <link rel="stylesheet" href="/stylesheet.css">
+  <link rel="shortcut icon" type="image/x-icon" href="/resources/favicon.ico">
+  <link rel="stylesheet" href="/professional.css" id="aux_style">
+  <script>
+      if (window.sessionStorage.getItem('style_mode') == 'fun') {
+          document.getElementById('aux_style').setAttribute('href', '');
+      }
+  </script>
+</head scroll=no>
+
+<body>
+
+  <div class="content" id="content">
+    <div class="header">
+      <img src="/resources/bird.gif" class="project_picture">
+      <h1 class="project_page_title">
+        Cat Ears
+      </h1>
+      <a href="/index.html">Home</a>
+    </div>
+      <p>
+        My friend always wanted a pair of cat ears.  They're great for all sorts of occasions -- halloween,
+        formal dining, research conferences...  I also figured it'd be a fun project over winter break so here
+        we are.
+      </p>
+
+      <h2>Design Ideas</h2>
+      <p>
+        I was going for an industrial cyberpunk aesthetic here, reminiscent of Akira or Ghost in the Shell.
+        The ears are intentionally asymmetric to give the impression of a hasty construction.  The various
+        color pallets were also selected to invoke this chaotic atmosphere.
+      </p>
+
+
+      <h2>Construction</h2>
+      <p>
+        The guts are very similar to that of the <a href=/project_pages/bird.html>bird lamp</a>.
+        Inside is a small neopixel ring, a three led line, and two individual neopixels for backlighting.
+        An arduino nano is used for control and Molex Picoblades were used for easy reconfiguration.
+        A small button allows the user to toggle between control modes.
+
+        The two ears and electronics holder were modeled in <a href="https://www.autodesk.com/products/fusion-360/overview?term=1-YEAR&tab=subscription">Fusion 360</a>
+        and 3D printed in carbon fiber filled nylon.
+      </p>
+
+      <h2>Programming</h2>
+      <p>
+        I made a pretty basic arduino <a href="https://github.com/elchun/ears_source_code">script</a> to run the lights.
+        It takes input from a button and allows the user to toggle between a spinning mode, pure colors, rainbow,
+        and a color picker.  The color picker allows a user to send a rgb color code over serial to the ears.
+        This is then displayed with the built in neopixels.  While it probably would have been easier to just
+        choose colors with guess and check, I thought it'd be fun to be able to update colors live if
+        connected to the serial port.
+      </p>
+  </div>
+
+
+</body>
+</html>
