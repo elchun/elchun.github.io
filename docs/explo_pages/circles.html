@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Random Circles</title>
+  <style>
+    body {
+      background-color: #000000;
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+    }
+
+    .circle {
+      position: absolute;
+      border-radius: 50%;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.5s;
+      background-color: orange;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: white;
+      font-size: 24px;
+      font-weight: bold;
+      font-family: "Century Gothic", sans-serif;
+    }
+  </style>
+</head>
+<body>
+  <script>
+    function createCircle() {
+      var circle = document.createElement("div");
+      circle.className = "circle";
+
+      var size = Math.random() * 100 + 20; // Random size between 20 and 120 pixels
+      var color = '#' + Math.floor(Math.random() * 16777215).toString(16); // Random color
+
+      circle.style.width = size + "px";
+      circle.style.height = size + "px";
+      circle.style.background = color;
+
+      var maxX = window.innerWidth - size;
+      var maxY = window.innerHeight - size;
+      var x = Math.random() * maxX;
+      var y = Math.random() * maxY;
+
+      circle.style.left = x + "px";
+      circle.style.top = y + "px";
+
+      var randomLetter = String.fromCharCode(65 + Math.floor(Math.random() * 26)); // Random uppercase letter
+
+      circle.innerText = randomLetter;
+
+      document.body.appendChild(circle);
+
+      setTimeout(function() {
+        circle.style.opacity = 1;
+      }, 100);
+
+      setTimeout(function() {
+        circle.style.opacity = 0;
+        setTimeout(function() {
+          document.body.removeChild(circle);
+        }, 500);
+      }, Math.random() * 2000 + 1000); // Random duration between 1 and 3 seconds
+    }
+
+    setInterval(createCircle, 500); // Create a circle every 0.5 seconds
+  </script>
+</body>
+</html>
