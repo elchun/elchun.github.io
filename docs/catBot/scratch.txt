@@ -183,7 +183,19 @@
 
 
 
+\\\\\\\\\\\\\
+    .tab {
+      position: relative;
+      border-bottom: 1px solid #ccc;
+      padding: 10px;
+      cursor: pointer;
+      z-index: 1;
+      transition: transform 0.5s;
+    }
 
+    .active .tab {
+      transform: translateY(-100%);
+    }
 
 
 

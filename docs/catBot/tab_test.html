@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Collapsible Tabs</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    .tabs {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .tab {
+      position: relative;
+      border-bottom: 1px solid #ccc;
+      padding: 10px;
+      cursor: pointer;
+      z-index: 1;
+      transition: transform 0.5s;
+    }
+
+    .active .tab {
+      transform: translateY(-100%);
+    }
+
+    .tab-content {
+      position: relative;
+      padding: 10px;
+      overflow-y: auto;
+      flex-grow: 1;
+      max-height: calc(100vh - 40px); /* Subtract the height of other tabs (2 * 10px padding) */
+      opacity: 0;
+      transform: translateY(-100%);
+      transition: opacity 0.5s, transform 0.5s;
+    }
+
+    .active .tab-content {
+      opacity: 1;
+      transform: translateY(0%);
+    }
+  </style>
+  <script>
+    function toggleTab(tab) {
+      const content = tab.nextElementSibling;
+      const isActive = tab.classList.contains('active');
+
+      if (!isActive) {
+        const activeTab = document.querySelector('.tab.active');
+        const activeContent = activeTab.nextElementSibling;
+
+        activeTab.classList.remove('active');
+        activeContent.style.opacity = 0;
+        activeContent.style.transform = 'translateY(-100%)';
+        activeContent.style.pointerEvents = 'none';
+      }
+
+      content.style.opacity = 1;
+      content.style.transform = 'translateY(0%)';
+      content.style.pointerEvents = 'auto';
+      tab.classList.toggle('active');
+    }
+
+    // Open Tab 1 by default
+    window.onload = function() {
+      const firstTab = document.querySelector('.tab');
+      firstTab.classList.add('active');
+      firstTab.nextElementSibling.style.opacity = 1;
+      firstTab.nextElementSibling.style.transform = 'translateY(0%)';
+      firstTab.nextElementSibling.style.pointerEvents = 'auto';
+    };
+  </script>
+</head>
+<body>
+  <div class="tabs">
+    <div class="tab" onclick="toggleTab(this)">Tab 1</div>
+    <div class="tab-content">This is the content of Tab 1.</div>
+
+    <div class="tab" onclick="toggleTab(this)">Tab 2</div>
+    <div class="tab-content">This is the content of Tab 2.</div>
+
+    <div class="tab" onclick="toggleTab(this)">Tab 3</div>
+    <div class="tab-content">This is the content of Tab 3.</div>
+
+    <div class="tab" onclick="toggleTab(this)">Tab 4</div>
+    <div class="tab-content">This is the content of Tab 4.</div>
+  </div>
+</body>
+</html>
