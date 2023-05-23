@@ -40,11 +40,17 @@
       opacity: 0;
       transform: translateY(-100%);
       transition: opacity 0.5s, transform 0.5s;
+      z-index: 0;
     }
 
     .active .tab-content {
       opacity: 1;
       transform: translateY(0%);
+      z-index: 1;
+    }
+
+    .hidden {
+      display: none;
     }
   </style>
   <script>
@@ -57,14 +63,10 @@
         const activeContent = activeTab.nextElementSibling;
 
         activeTab.classList.remove('active');
-        activeContent.style.opacity = 0;
-        activeContent.style.transform = 'translateY(-100%)';
-        activeContent.style.pointerEvents = 'none';
+        activeContent.classList.add('hidden');
       }
 
-      content.style.opacity = 1;
-      content.style.transform = 'translateY(0%)';
-      content.style.pointerEvents = 'auto';
+      content.classList.remove('hidden');
       tab.classList.toggle('active');
     }
 
@@ -72,9 +74,7 @@
     window.onload = function() {
       const firstTab = document.querySelector('.tab');
       firstTab.classList.add('active');
-      firstTab.nextElementSibling.style.opacity = 1;
-      firstTab.nextElementSibling.style.transform = 'translateY(0%)';
-      firstTab.nextElementSibling.style.pointerEvents = 'auto';
+      firstTab.nextElementSibling.classList.remove('hidden');
     };
   </script>
 </head>
@@ -84,13 +84,13 @@
     <div class="tab-content">This is the content of Tab 1.</div>
 
     <div class="tab" onclick="toggleTab(this)">Tab 2</div>
-    <div class="tab-content">This is the content of Tab 2.</div>
+    <div class="tab-content hidden">This is the content of Tab 2.</div>
 
     <div class="tab" onclick="toggleTab(this)">Tab 3</div>
-    <div class="tab-content">This is the content of Tab 3.</div>
+    <div class="tab-content hidden">This is the content of Tab 3.</div>
 
     <div class="tab" onclick="toggleTab(this)">Tab 4</div>
-    <div class="tab-content">This is the content of Tab 4.</div>
+    <div class="tab-content hidden">This is the content of Tab 4.</div>
   </div>
 </body>
 </html>
