@@ -1,0 +1,274 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>catBot: Solving the Falling Cat Problem with Trajectory Optimization</title>
+  <style>
+    body {
+      position: relative;
+      height: 100%;
+      margin: 0;
+      padding: 0;
+      text-align: center;
+      font-family: "Roboto", Arial, sans-serif;
+      font-weight: 200;
+      color: white;
+    }
+
+    .background {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: url("assets/catBot.jpeg");
+      background-size: cover;
+      background-position: center;
+      filter: blur(5px);
+      z-index: -1;
+    }
+
+    .content {
+      padding: 50px;
+    }
+
+    h1,
+    p {
+      margin: 10px;
+    }
+
+    .video-container {
+      position: relative;
+      width: 100%;
+      padding-bottom: 56.25%; /* 16:9 aspect ratio (9 / 16 = 0.5625 or 56.25%) */
+      margin-bottom: 20px;
+    }
+
+    .video-container iframe,
+    .video-container .pdf-wrapper {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+
+    .pdf-wrapper {
+      position: relative;
+      width: 100%;
+      height: 0;
+      padding-top: 56.25%; /* 16:9 aspect ratio (9 / 16 = 0.5625 or 56.25%) */
+      display: flex;
+      flex-wrap: nowrap;
+      overflow-x: auto;
+      justify-content: flex-start;
+      align-items: flex-start;
+      cursor: pointer;
+    }
+
+    .pdf-wrapper .page {
+      width: 20%; /* Adjust the width of each page as needed */
+      height: auto;
+      padding: 5px;
+      transition: transform 0.2s ease;
+      transform-origin: top left;
+    }
+
+    .pdf-wrapper .page:hover {
+      transform: scale(1.1); /* Adjust the scale value as needed */
+    }
+
+    .pdf-wrapper {
+      overflow-x: auto;
+    }
+
+    .pdf-container {
+      display: flex;
+    }
+
+    .page {
+      width: 100%;
+      height: auto;
+      max-height: 80vh;
+      margin: 10px;
+    }
+
+
+    .pdf-wrapper .page-fullsize {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      margin: auto;
+      z-index: 9999;
+      background-color: rgba(0, 0, 0, 0.8);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      cursor: zoom-out;
+    }
+
+    .pdf-wrapper .page-fullsize img {
+      max-width: 100%;
+      max-height: 100%;
+    }
+  </style>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap">
+</head>
+
+<body>
+  <div class="background"></div>
+  <div class="content">
+    <h1>catBot: Solving the Falling Cat Problem with Trajectory Optimization</h1>
+    <p>This is the text body of your webpage.</p>
+
+    <!-- Embedding a YouTube video and PDF together -->
+    <div class="video-container">
+      <div class="video-wrapper">
+        <iframe
+          src="https://www.youtube.com/embed/1ciOdeboFNU"
+          title="YouTube video player"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          allowfullscreen
+        ></iframe>
+      </div>
+      <div class="pdf-wrapper">
+        <div class="pdf-container">
+          <object class="page" data="assets/6_8210_final_report.pdf#page=1" type="application/pdf"></object>
+          <object class="page" data="assets/6_8210_final_report.pdf#page=2" type="application/pdf"></object>
+          <object class="page" data="assets/6_8210_final_report.pdf#page=3" type="application/pdf"></object>
+          <object class="page" data="assets/6_8210_final_report.pdf#page=4" type="application/pdf"></object>
+          <object class="page" data="assets/6_8210_final_report.pdf#page=5" type="application/pdf"></object>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const pages = document.querySelectorAll('.page');
+
+    // Add click event listeners to each page
+    pages.forEach((page, index) => {
+      page.addEventListener('click', () => {
+        // Create a full-size view of the clicked page
+        const pageFullsize = document.createElement('div');
+        pageFullsize.classList.add('page-fullsize');
+
+        const img = new Image();
+        img.src = page.getAttribute('data');
+        img.onload = () => {
+          pageFullsize.appendChild(img);
+          document.body.appendChild(pageFullsize);
+        };
+
+        // Remove the full-size view when clicked anywhere outside the image
+        pageFullsize.addEventListener('click', event => {
+          if (event.target === pageFullsize) {
+            pageFullsize.remove();
+          }
+        });
+
+        // Append the full-size view to the body
+        document.body.appendChild(pageFullsize);
+      });
+    });
+  </script>
+
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+////////////
+
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Collapsible Tabs</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    .tabs {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .tab {
+      border-bottom: 1px solid #ccc;
+      padding: 10px;
+      cursor: pointer;
+    }
+
+    .tab-content {
+      display: none;
+      padding: 10px;
+      overflow-y: auto;
+      flex-grow: 1;
+      max-height: calc(100vh - 40px); /* Subtract the height of other tabs (2 * 10px padding) */
+    }
+
+    .active .tab-content {
+      display: block;
+    }
+  </style>
+  <script>
+    function toggleTab(tab) {
+      const content = tab.nextElementSibling;
+      const isActive = tab.classList.contains('active');
+
+      if (!isActive) {
+        const activeTab = document.querySelector('.tab.active');
+        const activeContent = activeTab.nextElementSibling;
+
+        activeContent.style.display = 'none';
+        activeTab.classList.remove('active');
+      }
+
+      content.style.display = 'block';
+      tab.classList.add('active');
+    }
+
+    // Open Tab 1 by default
+    window.onload = function() {
+      const firstTab = document.querySelector('.tab');
+      firstTab.classList.add('active');
+      firstTab.nextElementSibling.style.display = 'block';
+    };
+  </script>
+</head>
+<body>
+  <div class="tabs">
+    <div class="tab active" onclick="toggleTab(this)">Tab 1</div>
+    <div class="tab-content">This is the content of Tab 1.</div>
+
+    <div class="tab" onclick="toggleTab(this)">Tab 2</div>
+    <div class="tab-content">This is the content of Tab 2.</div>
+
+    <div class="tab" onclick="toggleTab(this)">Tab 3</div>
+    <div class="tab-content">This is the content of Tab 3.</div>
+
+    <div class="tab" onclick="toggleTab(this)">Tab 4</div>
+    <div class="tab-content">This is the content of Tab 4.</div>
+  </div>
+</body>
+</html>
