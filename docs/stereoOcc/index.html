@@ -10,16 +10,34 @@
     body {
       background-color: #f4f4f4;
     }
+    .img-max {
+      max-width: 800px;
+    }
+    .header {
+      background-color: #f4f4f4;
+    }
+
+    /* .container-fluid {
+    } */
+
   </style>
 </head>
 <body>
   <div class="container-fluid">
+    <!-- <div class="row sticky-top header"> -->
     <div class="row">
-      <!-- <div class="col text-center"> -->
       <div class="col">
         <h1 class="display-1 text-black">Stereo Occupancy Networks</h1>
+        <h2 class="display-6 text-black"> <a href="https://elchun.github.io/" style="text-decoration: none">Ethan Chun</a> and Sarah Zhang</h2>
       </div>
     </div>
+
+    <div class="row">
+      <div class="col">
+        <hr>
+      </div>
+    </div>
+
     <div class="row">
       <div class="col">
         <h1>Abstract</h1>
@@ -31,11 +49,11 @@
             input data.
           </li>
           <li class="list-group-item">
-            <b>Problem</b>  The noise artifacts or lack of information from these data can degrade the robustness of their
+            <b>Problem:</b>  The noise artifacts or lack of information from these data can degrade the robustness of their
             implicit representations.
           </li>
           <li class="list-group-item">
-            <b>Solution</b>  We propose an alternative approach that utilizes stereo input images with an
+            <b>Solution:</b>  We propose an alternative approach that utilizes stereo input images with an
             occupancy network to create an implicit neural representation of household objects.
           </li>
           <!-- <li class="list-group-item">
@@ -46,6 +64,7 @@
         </ul>
       </div>
     </div>
+
     <div class="row">
       <div class="col">
         <h1>Results</h1>
@@ -58,16 +77,22 @@
 
     <div class="row">
       <div class="col">
-        <h1>Methods</h1>
-          <!-- <div class="embed-responsive embed-responsive-16by9">
-            <iframe class="embed-responsive-item" src="assets/68301_Final_Report.pdf"></iframe>
-          </div> -->
-
-          <div class='embed-responsive' style='padding-bottom:150%'>
-            <object data='assets/68301_Final_Report.pdf' type='application/pdf' width='100%' height='100%'></object>
-          </div>
+        <h1>Paper</h1>
+        <p class="lead">
+          Please see our paper for additional details on the project.
+        </p>
+        <div class="row justify-content-center">
+          <img src="assets/68301_final_report/frame1.png" alt="Frame 1" class="img-fluid img-max">
+          <img src="assets/68301_final_report/frame2.png" alt="Frame 2" class="img-fluid img-max">
+          <img src="assets/68301_final_report/frame3.png" alt="Frame 3" class="img-fluid img-max">
+          <img src="assets/68301_final_report/frame4.png" alt="Frame 4" class="img-fluid img-max">
+          <img src="assets/68301_final_report/frame5.png" alt="Frame 5" class="img-fluid img-max">
+          <img src="assets/68301_final_report/frame6.png" alt="Frame 6" class="img-fluid img-max">
+          <img src="assets/68301_final_report/frame7.png" alt="Frame 7" class="img-fluid img-max">
+        </div>
       </div>
     </div>
   </div>
+
 </body>
 </html>
