@@ -165,3 +165,7 @@ a:hover{
     margin-right: auto;
     padding: 1%
 }
+
+.blur-image {
+  filter: blur(5px);
+}
