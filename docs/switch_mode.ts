@@ -60,8 +60,8 @@ if (window.sessionStorage.getItem('style_mode') == 'fun') {
 } else if (window.sessionStorage.getItem('style_mode') == 'prof') {
     toProfMode();
 } else {
-    // window.sessionStorage.setItem('style_mode', 'fun');
-    window.sessionStorage.setItem('style_mode', 'prof');
-    // toFunMode();
-    toProfMode();
+    window.sessionStorage.setItem('style_mode', 'fun');
+    // window.sessionStorage.setItem('style_mode', 'prof');
+    toFunMode();
+    // toProfMode();
 }
