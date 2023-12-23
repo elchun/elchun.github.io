@@ -10,6 +10,7 @@ function toFunMode() {
     }
     document.getElementById('profile_pic').setAttribute('src', 'resources/loaf.png');
     document.getElementById('name').innerHTML = "Ethan's Super Fun Project Site"
+    // document.getElementById('name').innerHTML = "Ethan Chun ['s Super Fun Project Site]";
     document.getElementById('style_button').innerHTML = 'Professional Mode :/';
     window.sessionStorage.setItem("style_mode", "fun");
 }
