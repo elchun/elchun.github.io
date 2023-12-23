@@ -59,5 +59,6 @@ else {
     window.sessionStorage.setItem('style_mode', 'fun');
     // window.sessionStorage.setItem('style_mode', 'prof');
     toFunMode();
+    document.getElementById('fish_on').click();
     // toProfMode();
 }
