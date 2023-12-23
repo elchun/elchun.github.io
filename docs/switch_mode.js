@@ -51,6 +51,9 @@ style_button.addEventListener('click', function (e) {
 if (window.sessionStorage.getItem('style_mode') == 'fun') {
     // document.getElementById('aux_style').setAttribute('href', '');
     toFunMode();
+    if (window.sessionStorage.getItem('fish') == 'on') {
+        document.getElementById('fish_on').click();
+    }
 }
 else if (window.sessionStorage.getItem('style_mode') == 'prof') {
     toProfMode();
@@ -60,5 +63,8 @@ else {
     // window.sessionStorage.setItem('style_mode', 'prof');
     toFunMode();
     document.getElementById('fish_on').click();
+    if (window.sessionStorage.getItem('fish') == 'on') {
+        document.getElementById('fish_on').click();
+    }
     // toProfMode();
 }
