@@ -31,7 +31,8 @@
             <!-- <img src="resources/ethan_profile_1.jpg" id='profile_pic'/> -->
             <img src="" id='profile_pic'/>
             <!-- <h1>Ethan's Super Fun Project Site<h1> -->
-            <h1 id="name">Ethan Chun's Super Fun Project Site</h1>
+            <!-- <h1 id="name">Ethan's Super Fun Project Site</h1> -->
+            <h1 id="name">Ethan Chun</h1>
             <!-- <h1 id="name">Ethan Chun</h1> -->
         </div>
 
@@ -40,7 +41,8 @@
 
         <div>
             <p>
-                Hello! Welcome to my project page!  I am a senior at MIT studying Computer Science
+                Hello! Welcome to my project page!
+                I am a senior at MIT studying Computer Science
                 with a focus on Robotics and Machine Learning.  I currently work with
                 Sang-bae Kim's Biomimetic Robotics Group on robotic manipulation and
                 3D perception.  I have previously worked with Leslie Kaelbling and Tomas Lozano-Perez's
@@ -70,10 +72,13 @@
                 for locally condition pose extraction. -->
             </p>
             <p>
-                I've attached my <a href="resources/Chun_Ethan_Resume.pdf" target="_blank">resume</a> in case
-                anyone is curious.  Otherwise, enjoy the projects!
+                My resume can also be found <a href="resources/Chun_Ethan_Resume.pdf" target="_blank" style="color: green">here</a>
+                in case anyone is curious.
+                You can contact me at elchun [at] mit [dot] edu.
+                Otherwise, enjoy the projects!
+                <!-- I've attached my <a href="resources/Chun_Ethan_Resume.pdf" target="_blank" style="color: green">resume</a> in case
+                anyone is curious.  Otherwise, enjoy the projects! -->
             </p>
-
             <p>
                 <i>Note: I wil be remaining at MIT for a 5th year to complete my Master's Degree.</i>
             </p>
@@ -150,6 +155,29 @@
         <!-- <hr> -->
         <h1>Technical Projects</h1>
         <!-- <hr> -->
+
+        <div class="project_tab">
+            <img src="resources/tinyLDM.gif" class="project_picture">
+
+            <div>
+                <h2>
+                    <a href="tinyLDM/">Tiny View Conditioned Latent Diffusion Models</a>
+                </h2>
+                <p>
+                    View conditioned latent diffusion models show great potential to improve scene understanding in robotics applications.
+                    However, training times are slow and while the former focuses on image quality, robotic applications prioritize efficiency.
+                    To fix this, we present a scaled down version of the popular Latent Diffusion Model, trained on the SRNCars dataset.
+                    Inspired by the work, <a href="https://zero123.cs.columbia.edu/" target="_blank">Zero-1-to-3</a>,
+                    we provide image and pose conditioning conditioning to allow for novel view synthesis from single images.
+                    Our model reduces the number of trainable parameters from 860 million in state of the art models to less than 1.7 million parameters
+                    and trains in less than four hours on a consumer GPU.  This was my final project for
+                    <a href="https://www.scenerepresentations.org/courses/inverse-graphics-23/" target="_blank">
+                    Vincent Sitzmann's Inverse Graphics seminar
+                    </a>
+                    at MIT.
+                </p>
+            </div>
+        </div>
 
         <div class="project_tab">
             <!-- <img src="resources/default_image.jpeg" class="project_picture" > -->
