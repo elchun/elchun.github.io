@@ -65,6 +65,7 @@ if (window.sessionStorage.getItem('style_mode') === 'fun') {
     toProfMode();
 } else {
     window.sessionStorage.setItem('style_mode', 'fun');
+    // console.log("here")
     // window.sessionStorage.setItem('style_mode', 'prof');
     toFunMode();
     document.getElementById('fish_on').click();

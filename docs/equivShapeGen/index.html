@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Novel Shape Generation with SO(3)-Equivariant Auto-Encoders</title>
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap">
+
+  <style>
+    /* Custom CSS for additional styles */
+    body {
+      background-color: #f4f4f4;
+    }
+    .img-max {
+      max-width: 800px;
+    }
+    .header {
+      background-color: #f4f4f4;
+    }
+
+    /* .container-fluid {
+    } */
+
+  </style>
+</head>
+<body>
+  <div class="container-fluid">
+    <!-- <div class="row sticky-top header"> -->
+    <div class="row">
+      <div class="col">
+        <h1 class="display-1 text-black">Novel Shape Generation with SO(3)-Equivariant
+          Auto-Encoders</h1>
+        <h2 class="display-6 text-black"> <a href="https://elchun.github.io/" style="text-decoration: none">Ethan Chun</a> and
+          <a href="https://shayan-p.github.io/" style="text-decoration: none">Shayan Pardis</a></h2>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col">
+        <hr>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col">
+        <h1>Abstract</h1>
+          Novel shape generation is a critical procedure across fields spanning computer graphics to robotics.
+          Unfortunately, current methods for generating 3D shapes are data inefficient due to their inability to utilize the inherent SO(3) symmetry in 3D data.
+          Therefore, we propose a simple, SO(3) equivariant, auto-encoding neural network to test the feasibility of building larger SO(3) equivariant shape generation models.  In order to capture the SO(3) symmetry of our input data, we represent 3D shapes as the coefficients of the spherical harmonic basis functions. Then, to perform SO(3) equivariant latent space traversal and produce coherent outputs, we design a rotation equivariant interpolation method that distinguishes between the rotation and shape components of the latent space.
+          We demonstrate robust reconstruction of a dataset of 100 randomly generated boxes and show coherent traversals of the latent space when trained on two and 100 randomly selected objects.
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col">
+        <h1>Paper</h1>
+        <p class="lead">
+          Please see our paper for additional details on the project.  (pdf link <a href="assets/equivShapeGen.pdf">here</a>)
+        </p>
+        <div class="row justify-content-center">
+          <img src="assets/equivShapeGen_1.png" alt="Frame 1" class="img-fluid img-max">
+          <img src="assets/equivShapeGen_2.png" alt="Frame 2" class="img-fluid img-max">
+          <img src="assets/equivShapeGen_3.png" alt="Frame 3" class="img-fluid img-max">
+          <img src="assets/equivShapeGen_4.png" alt="Frame 4" class="img-fluid img-max">
+          <img src="assets/equivShapeGen_4.png" alt="Frame 5" class="img-fluid img-max">
+          <img src="assets/equivShapeGen_5.png" alt="Frame 6" class="img-fluid img-max">
+          <img src="assets/equivShapeGen_6.png" alt="Frame 7" class="img-fluid img-max">
+          <img src="assets/equivShapeGen_8.png" alt="Frame 8" class="img-fluid img-max">
+          <img src="assets/equivShapeGen_9.png" alt="Frame 9" class="img-fluid img-max">
+          <img src="assets/equivShapeGen_10.png" alt="Frame 10" class="img-fluid img-max">
+          <img src="assets/equivShapeGen_11.png" alt="Frame 11" class="img-fluid img-max">
+          <img src="assets/equivShapeGen_12.png" alt="Frame 12" class="img-fluid img-max">
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <p class="lead">
+        Webpage created by Ethan Chun and ChatGPT :&#41;
+      </p>
+    </div>
+  </div>
+
+</body>
+</html>
