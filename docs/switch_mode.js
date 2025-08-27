@@ -59,14 +59,15 @@ else if (window.sessionStorage.getItem('style_mode') === 'prof') {
     toProfMode();
 }
 else {
-    window.sessionStorage.setItem('style_mode', 'fun');
     // console.log("here")
     // window.sessionStorage.setItem('style_mode', 'prof');
+
     toFunMode();
-    document.getElementById('fish_on').click();
-    if (window.sessionStorage.getItem('fish') === 'on') {
+    // document.getElementById('fish_on').click();
+    if (window.sessionStorage.getItem('fish') === 'off') {
         document.getElementById('fish_on').click();
     }
+    window.sessionStorage.setItem('style_mode', 'fun');
     // toProfMode();
 }
 //# sourceMappingURL=switch_mode.js.map
